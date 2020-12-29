@@ -10,7 +10,9 @@
 ~~~
 
 #### 2. Install OpenCV 4
+~~~
 (ubuntu)$ pip3 install opencv-contrib-python
+~~~
 
 #### 3. Usage
 ~~~
