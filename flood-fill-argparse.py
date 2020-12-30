@@ -11,8 +11,14 @@ def floodFill (img, x, y, color):
     return img
 
 if __name__ == '__main__':
-    inp, outp = sys.argv[1], sys.argv[2]
-    x, y = int(sys.argv[3]), int(sys.argv[4])
+    parser = argparse.ArgumentParser(description="fill flood")
+    parser.add_argument("--io", nargs=2, type=str, help="inputfile, outputfile", required=True)
+    parser.add_argument("--location", nargs=2, type=int, help="an integer for (x,y)", required=True)
+    parser.add_argument("--rgb", nargs=3, type=int, help="(optional) color=(r,g,b), default=(255,0,0)")
+    args = parser.parse_args()
+
+    inp, outp = args.io[0], args.io[1]
+    x, y = args.location[0], args.location[1]
     img = cv.imread(inp)
     if img is None:
         print(" flood-fill.py error: Image input failed")
@@ -21,6 +27,11 @@ if __name__ == '__main__':
         print(" flood-fill.py error: x or y out of image range")
         sys.exit(1)
     bgrColor = (0, 0, 255)
+    if args.rgb is not None:
+        bgrColor = (args.rgb[2], args.rgb[1], args.rgb[0])
+        if 0 > bgrColor[0] or 255 < bgrColor[0] or 0 > bgrColor[1] or 255 < bgrColor[1] or 0 > bgrColor[2] or 255 < bgrColor[2]:
+            print(" flood-fill.py error: Invalid RGB value")
+            sys.exit(1)
     floodFill(img, x, y, bgrColor)
     if cv.imwrite(outp, img) == False:
         print(" flood-fill.py error: Image output failed")
