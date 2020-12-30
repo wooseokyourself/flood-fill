@@ -16,7 +16,7 @@
 
 #### 3. Usage
 ~~~
-(ubuntu)$ python3 main.py --io --location --rgb
+(ubuntu)$ python3 flood-fill.py --io --location --rgb
 ~~~
 io: 입/출력 이미지 경로   
 location: 좌표 (x, y)   
