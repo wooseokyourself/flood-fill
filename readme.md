@@ -25,7 +25,7 @@ ex. python3 main.py --io input.jpg output.jpg --location 300 500 --rgb 255 0 0
 
 #### 4. Logs
 정상적으로 작업을 수행하면 exit code로 0을, 오류가 발생했다면 1을 리턴한다.   
-오류 발생시 커맨드라인에 다음과 같은 로그를 남긴다.
+오류 발생시 stdout에 다음과 같은 로그를 남긴다.
 ~~~
  flood-fill.py error: Image input failed
 ~~~
