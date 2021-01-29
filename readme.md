@@ -2,7 +2,7 @@
 이미지에 색 채우기
 
 ## Build
-#### 1. Install Python 3.5 >= and pip3
+#### 1. Install Python 3.5 or later and pip3
 ~~~
 (ubuntu)$ sudo apt-get install python3
 (ubuntu)$ python3 --version
